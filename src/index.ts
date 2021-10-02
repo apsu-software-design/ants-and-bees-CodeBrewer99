@@ -2,7 +2,6 @@ import * as Ants from './ants';
 import {AntColony, AntGame, Hive} from './game';
 import {play, showMapOf} from './ui';
 
-
 if(process.argv[2] === '--debug'){ 
   //the scenario to debug with
   var colony = new AntColony(16,1,8,0); //testing colony
@@ -22,6 +21,11 @@ if(process.argv[2] === '--debug'){
   //play(game); //launch the interactive version from here
 
 }
+if(1)
+{
+ 1+1;
+}
+
 else {
   //initialize the game to play (not interactively selected yet)
   var colony = new AntColony(2,3,8,3); //full colony
