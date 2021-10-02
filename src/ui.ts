@@ -13,7 +13,12 @@ const Vorpal = vorpal();
 export function showMapOf(game:AntGame){
   console.log(getMap(game));
 }
-
+/**
+ * Gets the map for a given antgame
+ * 
+ * @param game determines AntGame to get map
+ * @returns the map for the game
+ */
 function getMap(game:AntGame) {
   let places:Place[][] = game.getPlaces();
   let tunnelLength = places[0].length;
@@ -55,6 +60,9 @@ function getMap(game:AntGame) {
       map += ' '; 
     }
     map += '\n    ';
+    /**
+     * Places water for the map
+     */
     for(let j=0; j<places[i].length; j++){
       let place = places[i][j];
       if(place.isWater()){
@@ -100,7 +108,11 @@ function iconFor(ant:Ant){
   return icon;
 }
 
-
+/**
+ * This function uses the vorpal library to create commands, aliases, and actions
+ * 
+ * @param game determines which antgame to play
+ */
 export function play(game:AntGame) {
   Vorpal
     .delimiter(chalk.green('AvB $'))
